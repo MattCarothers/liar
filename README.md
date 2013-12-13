@@ -12,3 +12,5 @@ Reads a list of domains from a text file and sends back spoofed DNS responses fo
 Each line of the block list should consists of a domain, an IP, and an optional TTL separated by whitespace.  For example:
 
 badguymalwaredownload.com     127.0.0.1       86400
+
+The above looks for requests for badguymalwaredownload.com and spoofs a response pointing to 127.0.0.1 with a TTL of 86400 seconds
