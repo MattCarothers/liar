@@ -5,7 +5,7 @@ Liar is a python/scapy script that listens for DNS requests, checks them against
 
 It depends on the scapy packet manipulation library.  http://www.secdev.org/projects/scapy/
 
-Usage: liar.py -i <interface> -f <blacklist file> [-d]
+Usage: liar.py -i &lt;interface&gt; -f &lt;blacklist file&gt; [-d]
 
 Reads a list of domains from a text file and sends back spoofed DNS responses for requests to them.  Designed for an environment in which an intrusion detection system sees DNS traffic via a passive tap and cannot block packets directly.  Runs in the foreground unless -d is specified.
 
