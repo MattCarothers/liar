@@ -74,9 +74,12 @@ def main():
 	load_list(blockfile)
 
 	# Get the length of the first part of each hostname.  We'll use
-	# that to narrow down our pcap filter so we don't have to fully
-	# parse every packet.  This is particularly effective for DGAs
+	# that to narrow down our pcap filter so we don't have to look 
+	# at every DNS packet.  This is particularly effective for DGAs
 	# that generate unusually long domain names.
+	#
+	# E.g. "udp and dst port 53 and udp[20] == 12" matches
+	# 0123456789abc.com but not abc.com
 	token_len = {}
 	for hostname in blocklist.keys():
 		first_token_len = len(re.split('\.', hostname)[0])
